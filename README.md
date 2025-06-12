@@ -3,3 +3,14 @@ The solution is contained in a single Jupyter notebook. I wanted to do the task 
 The notebook contains implementation of several different approaches with explanations and basic benchmarking and visualization.
 
 Both CUDA and Julia are new to me. I used [this](https://g.co/kgs/trm6WZe) textbook and the official Julia and CUDA.jl documentation as primary resources.
+
+Benchmarking:\
+cpu: 1712 us\
+gpu: 155 us\
+gpu (exploit sym on host): 85 us\
+gpu (exploit sym on device): 332 us\
+
+Plots:\
+![alt text][https://github.com/raja-19/julia-gpu-task/blob/main/time_of_nk.png "Time of n and k plot"]\
+![alt text][https://github.com/raja-19/julia-gpu-task/blob/main/time_of_n.png "Time of n plot"]\
+![alt text][https://github.com/raja-19/julia-gpu-task/blob/main/time_of_k.png "Time of k plot"]
