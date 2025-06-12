@@ -1,4 +1,5 @@
 using Test
+using BenchmarkTools
 
 k = 10
 n = 3
@@ -9,3 +10,5 @@ arr3 = map(.+, arr1, arr2)
 
 expected = fill((fill(3.0f0, n), fill(3.0f0, n, n)), k)
 println(@test arr3 == expected)
+
+@btime map(.+, $arr1, $arr2)

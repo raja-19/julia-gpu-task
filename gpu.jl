@@ -1,5 +1,6 @@
 using CUDA
 using Test
+using BenchmarkTools
 
 k = 10
 n = 3
@@ -17,3 +18,5 @@ arr3 = [(arr3_h[:,i], arr3_h[:,i+1:i+n]) for i in 1:(n+1):size(arr3_h, 2)]
 
 expected = fill((fill(3.0f0, n), fill(3.0f0, n, n)), k)
 println(@test arr3 == expected)
+
+@btime CUDA.@sync $arr1_d + $arr2_d

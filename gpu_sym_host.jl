@@ -1,5 +1,6 @@
 using CUDA
 using Test
+using BenchmarkTools
 
 k = 10
 n = 3
@@ -32,3 +33,5 @@ arr3 = [(arr3_h[1:n], flat2sym(arr3_h[n+1:n*(n+3)÷2], n)) for i in 1:n*(n+3)÷2
 
 expected = fill((fill(3.0f0, n), fill(3.0f0, n, n)), k)
 println(@test arr3 == expected)
+
+@btime CUDA.@sync $arr1_d + $arr2_d
